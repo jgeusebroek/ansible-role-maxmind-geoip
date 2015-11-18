@@ -1,0 +1,15 @@
+---
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+# Debian Wheezy has the geoipupdate tool in the geoip-bin package, however in Jessie
+# this has been removed without a replacement package. So Jessie involves some extra
+# steps, hence the split.
+
+- include: setup-Debian-Wheezy.yml
+  when: ansible_os_family == 'Debian' and ansible_distribution_release == 'wheezy'
+
+- include: setup-Debian-Jessie.yml
+  when: ansible_os_family == 'Debian' and ansible_distribution_release == 'jessie'
+
+- include: configuration.yml

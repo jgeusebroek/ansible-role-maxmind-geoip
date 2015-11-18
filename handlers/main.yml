@@ -1,0 +1,10 @@
+---
+- name: Update GeoIP databases
+  command: '{{ maxmind_update_binary }} -f {{ maxmind_update_configuration }}'
+  register: geoipupdate_check
+  failed_when: geoipupdate_check.rc > 1
+
+- name: Restart cron
+  service:
+    name: "{{ 'cron' if ansible_os_family == 'Debian' else 'crond' }}"
+    state: restarted

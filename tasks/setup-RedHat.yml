@@ -1,0 +1,5 @@
+---
+- name: Install Maxmind GeoIP tools | Rhel
+  yum:
+    name: '{{ maxmind_update_package_rhel }}'
+    state: installed

@@ -1,0 +1,5 @@
+---
+- name: Install Maxmind GeoIP tools | Debian Wheezy
+  apt:
+    name: '{{ maxmind_update_package_wheezy }}'
+    state: installed

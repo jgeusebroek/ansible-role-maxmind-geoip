@@ -1,0 +1,43 @@
+---
+# Not splitting this out in different files based on distro / version so it can be easily overrided
+
+# Debian
+maxmind_update_package_wheezy: 'geoip-bin'
+maxmind_update_package_jessie: 'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.2.1-1_amd64.deb'
+
+# Rhel
+maxmind_update_package_rhel: 'GeoIP-update'
+
+# Credentials
+maxmind_update_userid: '999999'
+maxmind_update_licensekey: '000000000000'
+
+# Update tool
+maxmind_update_binary: '/usr/bin/geoipupdate'
+maxmind_update_configuration: '/etc/GeoIP.conf'
+
+# NOTE: Wheezy only supports Legacy databases, and not GeoLite2. This is why these are default.
+#
+# * GeoLite2-City - GeoLite 2 City
+# * GeoLite2-Country - GeoLite2 Country
+# * GeoLite-Legacy-IPv6-City - GeoLite Legacy IPv6 City
+# * GeoLite-Legacy-IPv6-Country - GeoLite Legacy IPv6 Country
+# * 506 - GeoLite Legacy Country
+# * 517 - GeoLite Legacy ASN
+# * 533 - GeoLite Legacy City
+maxmind_update_product_ids:
+# - GeoLite2-City
+# - GeoLite2-Country
+  - GeoLite-Legacy-IPv6-City
+  - GeoLite-Legacy-IPv6-Country
+  - 506
+  - 517
+  - 533
+
+# Crontab for databases autoupdate
+maxmind_cron_weekday: 2 # tuesday
+maxmind_cron_hour: 6
+maxmind_cron_minute: 13
+
+# Optional e-mail adres to send cron results
+maxmind_cron_email: ""

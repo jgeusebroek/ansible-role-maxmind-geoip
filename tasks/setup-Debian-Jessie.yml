@@ -1,0 +1,30 @@
+---
+- name: Install Maxmind GeoIP tools | Debian Jessie
+  apt:
+    name: '{{ maxmind_update_package_wheezy }}'
+    state: installed
+
+- name: Check if geoipupdate is installed
+  command: dpkg-query -W geoipupdate
+  register: geoipupdate_check
+  failed_when: geoipupdate_check.rc > 1
+  changed_when: geoipupdate_check.rc == 1
+
+- name: Download geoipupdate package to /tmp
+  get_url:
+    url: '{{ maxmind_update_package_jessie }}'
+    dest: /tmp/tmp_geoip_package.deb
+    mode: 0440
+  when: geoipupdate_check.rc == 1
+
+- name: Install Maxmind geoipupdate from local deb
+  apt:
+    deb: '/tmp/tmp_geoip_package.deb'
+    state: installed
+  when: geoipupdate_check.rc == 1
+
+- name: Remove downloaded geoipupdate package
+  file:
+    path: '/tmp/tmp_geoip_package.deb'
+    state: absent
+  when: geoipupdate_check.rc == 1
