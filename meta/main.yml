@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: Jeroen Geusebroek
-  description: Installs Maxmind GEOIP databases
+  description: Installs, and keeps up-to-date, Maxmind GeoIP databases.
   license: "license (BSD, MIT)"
   min_ansible_version: 1.2
   platforms:
