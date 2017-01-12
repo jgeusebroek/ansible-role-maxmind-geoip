@@ -1,3 +1,5 @@
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-jgeusebroek.maxmind--geoip-blue.svg)](https://galaxy.ansible.com/jgeusebroek/maxmind-geoip)
+
 # Ansible role: maxmind-geoip
 
 An Ansible Role that installs and configures the Maxmind GeoIP databases
@@ -25,7 +27,7 @@ Below are configurable variables with there default values.
 
 	# Debian
 	maxmind_update_package_jessie:
-		'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.2.1-1_amd64.deb'
+		'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.2.2-1_amd64.deb'
 
 	NOTE: Debian Jessie does not have a package for geoipupdate, that's why we install a version from 'sid'. This a workaround.
 
@@ -60,4 +62,4 @@ MIT / BSD
 
 ## Author Information
 
-This role was created in 2015 by [Jeroen Geusebroek](http://jeroengeusebroek.nl/).
+2015 - 2017 by [Jeroen Geusebroek](http://jeroengeusebroek.nl/).
