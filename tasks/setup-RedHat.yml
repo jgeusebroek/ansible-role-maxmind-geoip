@@ -1,5 +1,5 @@
 ---
 - name: Install Maxmind GeoIP tools | RedHat
-  yum:
+  package:
     name: '{{ maxmind_update_package_rhel }}'
     state: installed
