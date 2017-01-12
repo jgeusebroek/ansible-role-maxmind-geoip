@@ -1,4 +1,4 @@
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-jgeusebroek.maxmind--geoip-blue.svg)](https://galaxy.ansible.com/jgeusebroek/maxmind-geoip)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-maxmind--geoip-blue.svg)](https://galaxy.ansible.com/jgeusebroek/maxmind-geoip)
 
 # Ansible role: maxmind-geoip
 
