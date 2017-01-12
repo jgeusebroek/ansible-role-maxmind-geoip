@@ -1,0 +1,19 @@
+.vagrant
+.kitchen
+.molecule
+.cache
+*.retry
+
+# Created by .gitignore support plugin (hsz.mobi)
+.idea
+*.iml
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+.Trash-*
