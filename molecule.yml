@@ -1,0 +1,29 @@
+---
+ansible:
+  playbook: tests/molecule_playbook.yml
+dependency:
+  name: galaxy
+driver:
+  name: docker
+docker:
+  containers:
+    - name: debian7
+      image: jgeusebroek/debian7-ansible
+      image_version: latest
+      privileged: true
+      ansible_groups:
+        - debian
+    - name: debian8
+      image: geerlingguy/docker-debian8-ansible
+      image_version: latest
+      privileged: true
+      ansible_groups:
+        - debian
+    - name: centos7
+      image: geerlingguy/docker-centos7-ansible
+      image_version: latest
+      privileged: true
+      ansible_groups:
+        - redhat
+verifier:
+  name: testinfra

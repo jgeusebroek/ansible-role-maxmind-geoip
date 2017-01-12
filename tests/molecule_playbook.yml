@@ -1,0 +1,28 @@
+---
+- hosts: all
+
+  pre_tasks:
+    - name: Ensure cron is installed, otherwise tests will fail | Redhat
+      package:
+        name: cronie
+        state: present
+      when: ansible_os_family == 'RedHat'
+
+    - name: Ensure cron is installed, otherwise tests will fail | Debian
+      package:
+        name: cron
+        state: present
+      when: ansible_os_family == 'Debian'
+
+  vars:
+    maxmind_update_package_jessie: 'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.2.2-1_amd64.deb'
+
+  roles:
+    - role: jgeusebroek.maxmind-geoip
+
+  # tasks:
+  #   - name: Install git from backports
+  #     apt:
+  #       name: git
+  #       state: present
+  #       default_release: '{{ ansible_distribution_release }}-backports'
