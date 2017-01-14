@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/jgeusebroek/ansible-role-maxmind-geoip.svg?branch=master)](https://travis-ci.org/jgeusebroek/ansible-role-maxmind-geoip)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-maxmind--geoip-blue.svg)](https://galaxy.ansible.com/jgeusebroek/maxmind-geoip)
 
 # Ansible role: maxmind-geoip
