@@ -19,10 +19,3 @@
 
   roles:
     - role: jgeusebroek.maxmind-geoip
-
-  # tasks:
-  #   - name: Install git from backports
-  #     apt:
-  #       name: git
-  #       state: present
-  #       default_release: '{{ ansible_distribution_release }}-backports'
