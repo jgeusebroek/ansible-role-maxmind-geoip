@@ -14,8 +14,5 @@
         state: present
       when: ansible_os_family == 'Debian'
 
-  vars:
-    maxmind_update_package_jessie: 'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.2.2-1_amd64.deb'
-
   roles:
     - role: jgeusebroek.maxmind-geoip
