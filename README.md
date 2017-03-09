@@ -54,7 +54,7 @@ Below are configurable variables with there default values.
 	maxmind_cron_hour: 6
 	maxmind_cron_minute: 13
 
-	# Optional e-mail adres to send cron results
+	# Optional e-mail address to send cron results
 	maxmind_cron_email: ""
 
 ## License
