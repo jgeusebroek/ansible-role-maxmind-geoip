@@ -11,6 +11,21 @@ galaxy_info:
     versions:
     - wheezy
     - jessie
+    - stretch
+  - name: Debian
+    versions:
+    - wheezy
+    - jessie
+    - stretch
+  - name: Ubuntu
+    versions:
+      - oneiric
+      - precise
+      - quantal
+      - raring
+      - saucy
+      - trusty
+      - xenial
   - name: EL
     versions:
     - 6

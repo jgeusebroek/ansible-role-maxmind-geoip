@@ -5,6 +5,9 @@
 maxmind_update_package_wheezy: 'geoip-bin'
 maxmind_update_package_jessie: 'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.3.1-1_amd64.deb'
 
+maxmind_update_package_stretch_ppa: 'ppa:maxmind/ppa'
+maxmind_update_package_stretch: 'geoipupdate'
+
 # Rhel
 maxmind_update_package_rhel: 'GeoIP-update'
 
