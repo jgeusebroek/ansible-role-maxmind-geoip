@@ -3,6 +3,7 @@
 .molecule
 .cache
 *.retry
+__pycache__
 
 # Created by .gitignore support plugin (hsz.mobi)
 .idea

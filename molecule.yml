@@ -8,8 +8,8 @@ driver:
 docker:
   containers:
     - name: debian7
-      image: jgeusebroek/debian7-ansible
-      image_version: latest
+      image: debian
+      image_version: wheezy
       privileged: true
       command: /sbin/init
       ansible_groups:
