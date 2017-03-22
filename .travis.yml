@@ -33,7 +33,7 @@ before_install:
 
 install:
   # Install Ansible, Molecule and docker-py
-  - pip install "$ANSIBLE_PACKAGE" molecule docker-py
+  - pip install "$ANSIBLE_PACKAGE" molecule docker
 
   # Log Docker, Ansible and Molecule version
   - docker --version
