@@ -27,9 +27,8 @@ before_install:
   # While developing I like to name my roles similair to their Ansible Galaxy names.
   # These differ from their Github repository name.
   - cd .. && mv ansible-role-maxmind-geoip jgeusebroek.maxmind-geoip && cd jgeusebroek.maxmind-geoip
-  # Upgrade Distro & install Docker
+  # Upgrade Distro
   - sudo apt-get -qq update
-  - sudo apt-get install -o Dpkg::Options::='--force-confold' --force-yes -y docker-engine
 
 install:
   # Install Ansible, Molecule and docker-py
