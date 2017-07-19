@@ -7,13 +7,13 @@ driver:
   name: docker
 docker:
   containers:
-    - name: debian7
-      image: debian
-      image_version: wheezy
-      privileged: true
-      command: /sbin/init
-      ansible_groups:
-        - debian
+    # - name: debian7
+    #   image: debian
+    #   image_version: wheezy
+    #   privileged: true
+    #   command: /sbin/init
+    #   ansible_groups:
+    #     - debian
     - name: debian8
       image: geerlingguy/docker-debian8-ansible
       image_version: latest
