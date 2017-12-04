@@ -1,0 +1,12 @@
+---
+
+- name: Add MaxMind PPA | Ubuntu
+  apt_repository:
+    repo: "{{maxmind_update_ubuntu.ppa}}"
+    state: present
+
+- name: Install Maxmind geoipupdate from PPA | Ubuntu
+  apt:
+    name: "{{maxmind_update_ubuntu.package}}"
+    state: present
+    update_cache: yes

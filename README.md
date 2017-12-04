@@ -3,7 +3,7 @@
 
 # Ansible role: maxmind-geoip
 
-An Ansible Role that installs and configures the Maxmind GeoIP databases
+An Ansible Role that installs and configures the Maxmind GeoIP databases.
 
 ## Requirements
 
@@ -54,8 +54,12 @@ Below are configurable variables with there default values.
 	maxmind_cron_hour: 6
 	maxmind_cron_minute: 13
 
-	# Optional e-mail adres to send cron results
+	# Optional e-mail address to send cron results
 	maxmind_cron_email: ""
+
+## Other Information
+
+The Maxmind GeoIP databases is downloaded to the `/usr/share/GeoIP/` directory on Ubuntu operating systems.
 
 ## License
 

@@ -11,6 +11,14 @@ galaxy_info:
     versions:
     - wheezy
     - jessie
+  - name: Ubuntu
+    versions:
+      - precise
+      - quantal
+      - raring
+      - saucy
+      - trusty
+      - xenial
   - name: EL
     versions:
     - 6
