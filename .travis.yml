@@ -44,7 +44,7 @@ install:
   - molecule destroy
 
 script:
-  - travis_wait molecule test
+  - travis_wait 45 molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
