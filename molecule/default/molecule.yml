@@ -1,19 +1,14 @@
 ---
-ansible:
-  playbook: tests/molecule_playbook.yml
 dependency:
   name: galaxy
 driver:
   name: docker
-docker:
-  containers:
-    # - name: debian7
-    #   image: debian
-    #   image_version: wheezy
-    #   privileged: true
-    #   command: /sbin/init
-    #   ansible_groups:
-    #     - debian
+lint:
+  name: yamllint
+  enabled: False
+  options:
+    config-file: ../../../resources/.yamllint
+platforms:
     - name: debian8
       image: geerlingguy/docker-debian8-ansible
       image_version: latest
@@ -39,5 +34,13 @@ docker:
         - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
       ansible_groups:
         - redhat
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
 verifier:
   name: testinfra
+  lint:
+    name: flake8
