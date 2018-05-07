@@ -5,12 +5,16 @@ galaxy_info:
   author: Jeroen Geusebroek
   description: Installs, and keeps up-to-date, Maxmind GeoIP databases.
   license: "license (BSD, MIT)"
-  min_ansible_version: 1.2
+  min_ansible_version: 2.5
   platforms:
   - name: Debian
     versions:
-    - wheezy
     - jessie
+    - stretch
+  - name: Ubuntu
+    versions:
+    - xenial
+    - bionic
   - name: EL
     versions:
     - 6

@@ -27,10 +27,8 @@ None
 Below are configurable variables with there default values.
 
 	# Debian
-	maxmind_update_package_jessie:
-		'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.2.2-1_amd64.deb'
-
-	NOTE: Debian Jessie does not have a package for geoipupdate, that's why we install a version from 'sid'. This a workaround.
+	maxmind_update_package_debian:
+		'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.5.0-1~bpo9+1_amd64.deb'
 
 	# Credentials (these defaults are for the free databases)
 	maxmind_update_userid: '999999'
@@ -63,4 +61,4 @@ MIT / BSD
 
 ## Author Information
 
-2015 - 2017 by [Jeroen Geusebroek](http://jeroengeusebroek.nl/).
+2015 - 2018 by [Jeroen Geusebroek](http://jeroengeusebroek.nl/).

@@ -1,0 +1,9 @@
+---
+- name: Add Maxmind PPA repository | Ubuntu
+  apt_repository:
+    repo: ppa:maxmind/ppa
+
+- name: Install Maxmind geoipupdate | Ubuntu
+  apt:
+    name: geoipupdate
+    state: present

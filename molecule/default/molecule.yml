@@ -9,8 +9,26 @@ lint:
   options:
     config-file: ../../../resources/.yamllint
 platforms:
+    - name: ubuntu1604
+      image: jgeusebroek/ubuntu1604-molecule
+      image_version: latest
+      privileged: true
+      command: /lib/systemd/systemd
+      volume_mounts:
+        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+      ansible_groups:
+        - ubuntu
+    - name: ubuntu1804
+      image: jgeusebroek/ubuntu1804-molecule
+      image_version: latest
+      privileged: true
+      command: /lib/systemd/systemd
+      volume_mounts:
+        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+      ansible_groups:
+        - ubuntu
     - name: debian8
-      image: geerlingguy/docker-debian8-ansible
+      image: jgeusebroek/debian8-molecule
       image_version: latest
       privileged: true
       command: /lib/systemd/systemd
@@ -18,22 +36,31 @@ platforms:
         - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
       ansible_groups:
         - debian
-    - name: centos6
-      image: geerlingguy/docker-centos6-ansible
+    - name: debian9
+      image: jgeusebroek/debian9-molecule
       image_version: latest
       privileged: true
-      command: /sbin/init
-      ansible_groups:
-        - redhat
-    - name: centos7
-      image: geerlingguy/docker-centos7-ansible
-      image_version: latest
-      privileged: true
-      command: /usr/lib/systemd/systemd
+      command: /lib/systemd/systemd
       volume_mounts:
         - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
       ansible_groups:
-        - redhat
+        - debian
+    # - name: centos6
+    #   image: jgeusebroek/centos6-molecule
+    #   image_version: latest
+    #   privileged: true
+    #   command: /sbin/init
+    #   ansible_groups:
+    #     - redhat
+    # - name: centos7
+    #   image: jgeusebroek/centos7-molecule
+    #   image_version: latest
+    #   privileged: true
+    #   command: /usr/lib/systemd/systemd
+    #   volume_mounts:
+    #     - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    #   ansible_groups:
+    #     - redhat
 provisioner:
   name: ansible
   lint:

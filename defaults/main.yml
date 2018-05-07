@@ -2,8 +2,7 @@
 # Not splitting this out in different files based on distro / version so it can be easily overrided
 
 # Debian
-maxmind_update_package_wheezy: 'geoip-bin'
-maxmind_update_package_jessie: 'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.3.1-1_amd64.deb'
+maxmind_update_package_debian: 'http://ftp.nl.debian.org/debian/pool/contrib/g/geoipupdate/geoipupdate_2.5.0-1~bpo9+1_amd64.deb'
 
 # Rhel
 maxmind_update_package_rhel: 'GeoIP-update'

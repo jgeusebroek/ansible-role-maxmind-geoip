@@ -2,4 +2,4 @@
 - name: Install Maxmind GeoIP tools | RedHat
   package:
     name: '{{ maxmind_update_package_rhel }}'
-    state: installed
+    state: present

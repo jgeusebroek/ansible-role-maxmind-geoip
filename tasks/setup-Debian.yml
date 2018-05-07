@@ -1,24 +1,24 @@
 ---
-- name: Check if geoipupdate is installed | Debian Jessie
+- name: Check if geoipupdate is installed | Debian
   command: dpkg-query -W geoipupdate
   register: geoipupdate_check
   failed_when: geoipupdate_check.rc > 1
   changed_when: geoipupdate_check.rc == 1
 
-- name: Download geoipupdate package to /tmp  | Debian Jessie
+- name: Download geoipupdate package to /tmp  | Debian
   get_url:
-    url: '{{ maxmind_update_package_jessie }}'
+    url: '{{ maxmind_update_package_debian }}'
     dest: /tmp/tmp_geoip_package.deb
     mode: 0440
   when: geoipupdate_check.rc == 1
 
-- name: Install Maxmind geoipupdate from local deb | Debian Jessie
+- name: Install Maxmind geoipupdate from local deb | Debian
   apt:
     deb: '/tmp/tmp_geoip_package.deb'
-    state: installed
+    state: present
   when: geoipupdate_check.rc == 1
 
-- name: Remove downloaded geoipupdate package | Debian Jessie
+- name: Remove downloaded geoipupdate package | Debian
   file:
     path: '/tmp/tmp_geoip_package.deb'
     state: absent

@@ -8,7 +8,7 @@
         state: present
       when: ansible_os_family == 'RedHat'
 
-    - name: Ensure cron is installed, otherwise tests will fail | Debian
+    - name: Ensure cron is installed, otherwise tests will fail | Debian / Ubuntu
       package:
         name: cron
         state: present
