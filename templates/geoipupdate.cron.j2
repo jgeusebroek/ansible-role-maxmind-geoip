@@ -2,3 +2,4 @@
 # {{ ansible_managed }}
 
 {{ maxmind_cron_minute }} {{ maxmind_cron_hour }} * * {{ maxmind_cron_weekday }} root {{ maxmind_update_binary }} -f {{ maxmind_update_configuration }}
+
