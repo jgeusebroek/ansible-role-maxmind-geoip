@@ -1,6 +1,7 @@
 ---
 - name: Add Maxmind PPA repository | Ubuntu
   apt_repository:
+    codename: "{{ ansible_distribution_release }}"
     repo: ppa:maxmind/ppa
 
 - name: Install Maxmind geoipupdate | Ubuntu
