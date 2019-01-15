@@ -1,34 +1,18 @@
 ---
 language: python
-python: '2.7'
-
-# Require Docker
-services:
-  - docker
-
-# Requires sudo
-sudo: required
+services: docker
 
 # Spin off separate builds for each of the following versions of Ansible
 env:
-  # Minumum required Ansible version for Molecule
-  - ANSIBLE_PACKAGE='ansible==2.5.0'
-  # Latest ansible
-  - ANSIBLE_PACKAGE='ansible'
-
-# Require Ubuntu 14.04
-dist: trusty
+  matrix:
+    # Minumum required Ansible version for Molecule
+    - ANSIBLE_PACKAGE='ansible==2.5.0'
+    # Latest ansible
+    - ANSIBLE_PACKAGE='ansible'
 
 # Cache Ansible and Molecule to speed things up
 cache:
   - pip
-
-before_install:
-  # While developing I like to name my roles similair to their Ansible Galaxy names.
-  # These differ from their Github repository name.
-  - cd .. && mv ansible-role-maxmind-geoip jgeusebroek.maxmind-geoip && cd jgeusebroek.maxmind-geoip
-  # Upgrade Distro
-  - sudo apt-get -qq update
 
 install:
   # Install Ansible, Molecule and docker-py
@@ -39,12 +23,12 @@ install:
   - ansible --version
   - molecule --version
 
-  # Build the Docker images
-  - molecule create
-  - molecule destroy
+before_script:
+  - cd .. && mv ansible-role-maxmind-geoip jgeusebroek.maxmind-geoip && cd jgeusebroek.maxmind-geoip
 
 script:
-  - travis_wait 45 molecule test
+  # Start test
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

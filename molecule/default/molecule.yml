@@ -7,54 +7,52 @@ lint:
   name: yamllint
   enabled: False
   options:
-    config-file: ../../../resources/.yamllint
+    config-file: molecule/default/.yamllint
 platforms:
-    # - name: ubuntu1604
-    #   image: jgeusebroek/ubuntu1604-molecule
-    #   image_version: latest
-    #   privileged: true
-    #   command: /lib/systemd/systemd
-    #   volumes:
-    #     - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-    #   ansible_groups:
-    #     - ubuntu
-    - name: ubuntu1804
-      image: jgeusebroek/ubuntu1804-molecule
+    - name: ubuntu1604
+      image: jgeusebroek/ubuntu1604-molecule
       image_version: latest
+      pre_build_image: true
       privileged: true
       command: /lib/systemd/systemd
       volumes:
         - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
       ansible_groups:
         - ubuntu
-    # - name: debian8
-    #   image: jgeusebroek/debian8-molecule
-    #   image_version: latest
-    #   privileged: true
-    #   command: /lib/systemd/systemd
-    #   volumes:
-    #     - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-    #   ansible_groups:
-    #     - debian
-    - name: debian9
-      image: jgeusebroek/debian9-molecule
+    - name: ubuntu1804
+      image: jgeusebroek/ubuntu1804-molecule
       image_version: latest
+      pre_build_image: true
+      privileged: true
+      command: /lib/systemd/systemd
+      volumes:
+        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+      ansible_groups:
+        - ubuntu
+    - name: debian8
+      image: jgeusebroek/debian8-molecule
+      image_version: latest
+      pre_build_image: true
       privileged: true
       command: /lib/systemd/systemd
       volumes:
         - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
       ansible_groups:
         - debian
-    # - name: centos6
-    #   image: jgeusebroek/centos6-molecule
-    #   image_version: latest
-    #   privileged: true
-    #   command: /sbin/init
-    #   ansible_groups:
-    #     - redhat
+    - name: debian9
+      image: jgeusebroek/debian9-molecule
+      image_version: latest
+      pre_build_image: true
+      privileged: true
+      command: /lib/systemd/systemd
+      volumes:
+        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+      ansible_groups:
+        - debian
     # - name: centos7
     #   image: jgeusebroek/centos7-molecule
     #   image_version: latest
+    #   pre_build_image: true
     #   privileged: true
     #   command: /usr/lib/systemd/systemd
     #   volumes:
