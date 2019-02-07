@@ -27,7 +27,7 @@ maxmind_update_product_ids:
   - GeoLite2-Country
 
 # Crontab for databases autoupdate
-maxmind_cron_weekday: 2 # tuesday
+maxmind_cron_weekday: 2  # tuesday
 maxmind_cron_hour: 6
 maxmind_cron_minute: 13
 
