@@ -7,17 +7,17 @@ galaxy_info:
   license: "license (BSD, MIT)"
   min_ansible_version: 2.5
   platforms:
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-  - name: Ubuntu
-    versions:
-    - xenial
-    - bionic
-  - name: EL
-    versions:
-    - 6
-    - 7
-  categories:
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+    - name: EL
+      versions:
+        - 6
+        - 7
+  galaxy_tags:
     - system

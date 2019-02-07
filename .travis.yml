@@ -1,14 +1,15 @@
 ---
+dist: xenial
 language: python
 services: docker
 
-# Spin off separate builds for each of the following versions of Ansible
 env:
   matrix:
-    # Minumum required Ansible version for Molecule
-    - ANSIBLE_PACKAGE='ansible==2.5.0'
-    # Latest ansible
-    - ANSIBLE_PACKAGE='ansible'
+    - MOLECULE_DISTRO: ubuntu1604
+    - MOLECULE_DISTRO: ubuntu1804
+    - MOLECULE_DISTRO: debian8
+    - MOLECULE_DISTRO: debian9
+    # - MOLECULE_DISTRO: centos7
 
 # Cache Ansible and Molecule to speed things up
 cache:
@@ -16,7 +17,7 @@ cache:
 
 install:
   # Install Ansible, Molecule and docker-py
-  - pip install "$ANSIBLE_PACKAGE" molecule docker
+  - pip install ansible molecule docker
 
   # Log Docker, Ansible and Molecule version
   - docker --version

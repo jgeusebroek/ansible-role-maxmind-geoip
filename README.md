@@ -36,15 +36,8 @@ Below are configurable variables with there default values.
 
 	# These are the free databases, should you have a subscription change these values
 	maxmind_update_product_ids:
-	# - GeoLite2-City
-	# - GeoLite2-Country
-	  - GeoLite-Legacy-IPv6-City
-	  - GeoLite-Legacy-IPv6-Country
-	  - 506
-	  - 517
-	  - 533
-
-	NOTE: Debian Jessie only supports the legacy databases, which is why I have those as default.
+	  - GeoLite2-City
+	  - GeoLite2-Country
 
 	# Every tuesday the databases get updated at Maxmind
 	# The free databases are only updated the first tuesday of the month

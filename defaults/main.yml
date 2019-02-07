@@ -15,8 +15,6 @@ maxmind_update_licensekey: '000000000000'
 maxmind_update_binary: '/usr/bin/geoipupdate'
 maxmind_update_configuration: '/etc/GeoIP.conf'
 
-# NOTE: Wheezy only supports Legacy databases, and not GeoLite2. This is why these are default.
-#
 # * GeoLite2-City - GeoLite 2 City
 # * GeoLite2-Country - GeoLite2 Country
 # * GeoLite-Legacy-IPv6-City - GeoLite Legacy IPv6 City
@@ -25,13 +23,8 @@ maxmind_update_configuration: '/etc/GeoIP.conf'
 # * 517 - GeoLite Legacy ASN
 # * 533 - GeoLite Legacy City
 maxmind_update_product_ids:
-# - GeoLite2-City
-# - GeoLite2-Country
-  - GeoLite-Legacy-IPv6-City
-  - GeoLite-Legacy-IPv6-Country
-  - 506
-  - 517
-  - 533
+  - GeoLite2-City
+  - GeoLite2-Country
 
 # Crontab for databases autoupdate
 maxmind_cron_weekday: 2 # tuesday
