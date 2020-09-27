@@ -11,13 +11,11 @@ galaxy_info:
       versions:
         - jessie
         - stretch
+        - buster
     - name: Ubuntu
       versions:
         - xenial
         - bionic
-    - name: EL
-      versions:
-        - 6
-        - 7
+        - focal
   galaxy_tags:
     - system
