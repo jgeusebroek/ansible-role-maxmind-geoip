@@ -24,7 +24,7 @@ None
 
 ## Example Variables
 
-Below are configurable variables with there default values.
+Below are configurable variables with their default values.
 
 	# Debian
 	maxmind_update_package_debian:
