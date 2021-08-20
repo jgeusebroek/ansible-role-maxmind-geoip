@@ -40,7 +40,7 @@ Below are configurable variables with their default values.
 	  - GeoLite2-Country
 
 	# Every tuesday the databases get updated at Maxmind
-	# The free databases are only updated the first tuesday of the month
+	# The free databases are only updated on the first tuesday of the month
 	maxmind_cron_weekday: 2
 	maxmind_cron_hour: 6
 	maxmind_cron_minute: 13
